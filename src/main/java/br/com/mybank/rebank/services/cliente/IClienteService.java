@@ -4,7 +4,7 @@ import br.com.mybank.rebank.dto.ClienteDTO;
 
 public interface IClienteService {
 	
-	public Long cadastrarCliente(ClienteDTO novo);
-	public Long alterarDados(ClienteDTO cliente);
+	public Integer cadastrarCliente(ClienteDTO novo);
+	public Integer alterarDados(ClienteDTO cliente);
 
 }

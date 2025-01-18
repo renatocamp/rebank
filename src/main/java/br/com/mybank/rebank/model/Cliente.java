@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
@@ -13,10 +12,9 @@ import jakarta.persistence.Table;
 public class Cliente {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cliente_seq_gen")
-	@SequenceGenerator(name = "users_seq_gen", sequenceName = "cliente_seq_gen")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_cliente")
-	private Long idCliente;
+	private Integer idCliente;
 	
 	@Column(name = "nome_cliente")
 	private String nome;
@@ -30,14 +28,14 @@ public class Cliente {
 	@Column(name = "email_cliente", nullable = false, unique = true, length = 100)
 	private String email;
 	
-	@Column(name = "phone_cliente", nullable = false, unique = true, length = 20)
+	@Column(name = "telefone_cliente", nullable = false, unique = true, length = 20)
 	private String telefone;
 
-	public Long getIdCliente() {
+	public Integer getIdCliente() {
 		return idCliente;
 	}
 
-	public void setIdCliente(Long idCliente) {
+	public void setIdCliente(Integer idCliente) {
 		this.idCliente = idCliente;
 	}
 
